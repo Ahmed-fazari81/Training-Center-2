@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+docs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Keep the example
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Backups
+*.bak
+src/index.css.bak

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مركز التدريب - وزارة التعليم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0284c7">
+    <meta name="description" content="نظام إدارة خطط عمل مركز التدريب - وزارة التعليم">
+    <link rel="icon" type="image/png" href="./icon.png" />
+    <link rel="apple-touch-icon" href="./icon.png" />
+    <link rel="manifest" href="./manifest.json">
+    <script type="module" crossorigin src="./assets/index-ZpCq1z9g.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DF-orJmT.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirectPath = params.get('p');
+        if (redirectPath) {
+          var cleanPath = redirectPath.startsWith('/') ? redirectPath : '/' + redirectPath;
+          var query = params.get('q');
+          var fullUrl = cleanPath + (query ? '?' + query.replace(/~and~/g, '&') : '') + window.location.hash;
+          window.history.replaceState({}, '', fullUrl);
+        }
+      })();
+    </script>
+  </body>
+</html>
