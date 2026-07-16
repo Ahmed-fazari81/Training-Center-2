@@ -103,7 +103,7 @@ export default function Login() {
 
           {/* أيقونة */}
           <div className="relative inline-flex items-center justify-center w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl mb-4 mx-auto shadow-inner">
-            <img src="/Training-Center-2/logo.png" alt="شعار المركز" className="w-16 h-16 object-contain" />
+            <img src="/Training-Center-2/logo.png" alt="شعار المركز" className="w-18 h-18 object-contain" />
           </div>
 
           {/* العنوان الرئيسي */}
