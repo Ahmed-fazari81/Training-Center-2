@@ -184,6 +184,11 @@ export default function Login() {
         </form>
       </div>
 
+      <div className="mt-6 text-center text-sm text-white/90">
+        <p>فكرة راشد الزعابي - مدرب تقنية معلومات</p>
+        <p>تصميم وتنفيذ أحمد الفزاري</p>
+      </div>
+
       {/* ===== نافذة نسيت كلمة المرور ===== */}
       {forgotOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
