@@ -81,7 +81,6 @@ export default function Layout() {
           <div className="p-4 bg-slate-50 border-b border-slate-200">
             <p className="font-semibold text-slate-700">القائمة الرئيسية</p>
           </div>
-
           <div className="p-2 flex flex-col gap-1">
             {navLinks.map((link) => {
               const Icon = link.icon;
@@ -106,10 +105,7 @@ export default function Layout() {
 
           {/* قسم الإعدادات في أسفل القائمة */}
           <div className="p-2 border-t border-slate-100 mt-1">
-            <p className="text-xs font-semibold text-slate-400 px-3 py-1 uppercase tracking-wide">
-              الإعدادات
-            </p>
-
+            <p className="text-xs font-semibold text-slate-400 px-3 py-1 uppercase tracking-wide">الإعدادات</p>
             <button
               onClick={() => navigate('/settings/change-password')}
               className={clsx(
@@ -119,20 +115,13 @@ export default function Layout() {
                   : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               )}
             >
-              <KeyRound
-                className={clsx(
-                  "w-5 h-5",
-                  isActive('/settings/change-password')
-                    ? "text-sky-600"
-                    : "text-slate-400"
-                )}
-              />
+              <KeyRound className={clsx("w-5 h-5", isActive('/settings/change-password') ? "text-sky-600" : "text-slate-400")} />
               تغيير كلمة المرور
             </button>
           </div>
         </nav>
 
-        {/* Mobile Nav */}
+        {/* Mobile Nav (Bottom Bar) */}
         <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex justify-around p-2 z-20 pb-safe">
           {navLinks.map((link) => {
             const Icon = link.icon;
@@ -151,40 +140,23 @@ export default function Layout() {
               </button>
             );
           })}
-
+          {/* زر تغيير كلمة المرور في شريط الموبايل */}
           <button
             onClick={() => navigate('/settings/change-password')}
             className={clsx(
               "flex flex-col items-center gap-1 p-2 rounded-lg text-xs font-medium transition-colors min-w-[4rem]",
-              isActive('/settings/change-password')
-                ? "text-sky-700"
-                : "text-slate-500"
+              isActive('/settings/change-password') ? "text-sky-700" : "text-slate-500"
             )}
           >
-            <KeyRound
-              className={clsx(
-                "w-6 h-6",
-                isActive('/settings/change-password')
-                  ? "text-sky-600"
-                  : "text-slate-400"
-              )}
-            />
+            <KeyRound className={clsx("w-6 h-6", isActive('/settings/change-password') ? "text-sky-600" : "text-slate-400")} />
             كلمة المرور
           </button>
         </nav>
 
         {/* Page Content */}
-        <div className="flex-1 flex flex-col">
-          <main className="flex-1 pb-20 sm:pb-0">
-            <Outlet />
-          </main>
-
-          <footer className="mt-8 py-4 border-t border-slate-200 text-center text-xs text-slate-500">
-            <p>فكرة راشد الزعابي - مدرب تقنية معلومات</p>
-            <p>تصميم وتنفيذ أحمد الفزاري</p>
-          </footer>
-        </div>
-
+        <main className="flex-1 pb-20 sm:pb-0">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
