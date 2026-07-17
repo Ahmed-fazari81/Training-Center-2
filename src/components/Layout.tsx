@@ -157,6 +157,10 @@ export default function Layout() {
         <main className="flex-1 pb-20 sm:pb-0">
           <Outlet />
         </main>
+        <footer className="text-center py-4 text-xs text-slate-500 border-t border-slate-200">
+  <p>فكرة راشد الزعابي - مدرب تقنية معلومات</p>
+  <p>تصميم وتنفيذ أحمد الفزاري</p>
+</footer>
       </div>
     </div>
   );
