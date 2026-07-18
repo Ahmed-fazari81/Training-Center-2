@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiCall } from '../lib/api';
 import toast from 'react-hot-toast';
@@ -8,7 +9,9 @@ import clsx from 'clsx';
 
 export default function ManagerDashboard() {
   const { user } = useAuthStore();
-  const [activeTab, setActiveTab] = useState<'pending' | 'employees'>('pending');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const activeTab: 'pending' | 'employees' = location.pathname === '/manager/employees' ? 'employees' : 'pending';
   const [tasks, setTasks] = useState<any[]>([]);
   const [employees, setEmployees] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -112,7 +115,7 @@ export default function ManagerDashboard() {
     <div className="space-y-6 relative">
       <div className="flex gap-2 p-1 bg-slate-200/50 rounded-xl w-full sm:w-fit mx-auto sm:mx-0">
         <button
-          onClick={() => setActiveTab('pending')}
+          onClick={() => navigate('/manager')}
           className={clsx(
             "flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium rounded-lg transition-all",
             activeTab === 'pending' ? "bg-white text-sky-700 shadow-sm" : "text-slate-600 hover:text-slate-900"
@@ -122,7 +125,7 @@ export default function ManagerDashboard() {
           الطلبات المعلقة
         </button>
         <button
-          onClick={() => setActiveTab('employees')}
+          onClick={() => navigate('/manager/employees')}
           className={clsx(
             "flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium rounded-lg transition-all",
             activeTab === 'employees' ? "bg-white text-sky-700 shadow-sm" : "text-slate-600 hover:text-slate-900"
