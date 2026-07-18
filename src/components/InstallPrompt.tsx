@@ -133,7 +133,7 @@ export default function InstallPrompt() {
             </div>
           </div>
           <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-            قم بتثبيت التطبيق على جهازك للوصول السريع والعمل بدون اتصال بالإنترنت.
+            للوصول السريع إلى التطبيق قم بتثبيته على جهازك
           </p>
 
           <div className="flex gap-2">
